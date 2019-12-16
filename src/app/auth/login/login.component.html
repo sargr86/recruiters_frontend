@@ -1,0 +1,25 @@
+<form [formGroup]="loginForm" class="loginForm">
+
+  <!-- E-mail field-->
+  <mat-form-field>
+    <input matInput [placeholder]="'E-mail'" [formControlName]="'email'">
+    <mat-error [hidden]="!email.hasError('required')">E-mail is <strong>required</strong></mat-error>
+    <mat-error [hidden]="!email.hasError('patternInvalid')">E-mail is <strong>invalid</strong></mat-error>
+  </mat-form-field>
+
+  <!-- Password field -->
+  <mat-form-field>
+    <input matInput type="password" [placeholder]="'Password'" [formControlName]="'password'">
+    <!--            <ng-container *ngIf="pass.errors && (!pass.pristine||pass.touched)">-->
+    <mat-error [hidden]="!pass.hasError('required')">Password is <strong>required</strong></mat-error>
+    <!--            </ng-container>-->
+  </mat-form-field>
+
+  <!-- Login/ navigate-to-register page buttons -->
+  <div class="actions">
+    <button mat-raised-button color="primary" (click)="login()" [disabled]="!loginForm.valid ">
+      Log in
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+  </div>
+</form>
