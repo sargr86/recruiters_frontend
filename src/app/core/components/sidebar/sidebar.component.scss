@@ -1,0 +1,41 @@
+.mat-tree {
+  background-color: #204c90;
+  padding: 20px;
+  min-height: 100vh;
+  height: auto;
+
+  .mat-tree-node {
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .treeNode {
+    background-color: unset;
+    border: unset;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    margin-left: 10px;
+
+    span {
+      margin-left: 8px;
+    }
+  }
+}
+
+.menuItem {
+  display: flex;
+
+  span {
+    margin-left: 8px;
+  }
+}
+
+
+.treeContainer {
+  height: auto;
+  min-height: 100%;
+  background-color: #204c90;
+  padding-top: 120px;
+}

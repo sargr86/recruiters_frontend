@@ -6,7 +6,7 @@ import * as jwtDecode from 'jwt-decode';
 import {User} from '@shared/models/User';
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {API_URL} from '@shared/constants/app.config';
+import {API_URL} from '@core/constants/app.config';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +24,7 @@ export class AuthService {
     if (this.loggedIn()) {
       const token = localStorage.getItem('token');
       this.userData = jwtDecode(token);
+      console.log(this.userData)
     }
   }
 
@@ -56,19 +57,19 @@ export class AuthService {
    * Checks current user roles
    * @param role passed role
    */
-  // checkRoles(role: string) {
-  //   if (this.loggedIn() && this.userData) {
-  //     if ('role' in this.userData) {
-  //       return this.userData.role.name_en.toLowerCase() === role;
-  //     } else {
-  //
-  //       return this.userData.roles.map(r => {
-  //         return (r.name_en.toLowerCase().replace(' ', '_') === role);
-  //       }).some(Boolean);
-  //     }
-  //   }
-  //   return false;
-  // }
+  checkRoles(role: string) {
+    if (this.loggedIn() && this.userData) {
+      if ('role' in this.userData) {
+        return this.userData.role.name.toLowerCase() === role;
+      } else {
+
+        return this.userData.roles.map(r => {
+          return (r.name.toLowerCase().replace(' ', '_') === role);
+        }).some(Boolean);
+      }
+    }
+    return false;
+  }
 
 
 }

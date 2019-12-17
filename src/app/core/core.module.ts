@@ -5,15 +5,19 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {JwtHelperService} from '@auth0/angular-jwt';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ToastrModule} from 'ngx-toastr';
-import {RequestInterceptor} from '@shared/helpers/http.interceptor';
+import {RequestInterceptor} from '@core/helpers/http.interceptor';
+import {SidebarComponent} from './components/sidebar/sidebar.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [SidebarComponent],
   imports: [
     CommonModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     JwtHelperService,
@@ -22,10 +26,14 @@ import {RequestInterceptor} from '@shared/helpers/http.interceptor';
       useClass: RequestInterceptor,
       multi: true
     },
+  ],
+  exports: [
+    MaterialModule,
+    SidebarComponent
   ]
 })
 export class CoreModule {
-  constructor( @Optional() @SkipSelf() parentModule: CoreModule) {
+  constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
     if (parentModule) {
       throw new Error('CoreModule has already been loaded. You should only import Core modules in the AppModule only.');
     }

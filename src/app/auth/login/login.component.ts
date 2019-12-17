@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {EMAIL_PATTERN} from '@shared/constants/app.config';
-import {patternValidator} from '@shared/helpers/pattern-validator';
+import {EMAIL_PATTERN} from '@core/constants/app.config';
+import {patternValidator} from '@core/helpers/pattern-validator';
 import {AuthService} from '@core/services/auth.service';
 import {Router} from '@angular/router';
 import {Subscription} from 'rxjs';
@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('token', (dt.hasOwnProperty('token') ? dt.token : ''));
 
       // Gets current user data
-      // this.auth.userData = jwtDecode(localStorage.getItem('token'));
+      this.auth.userData = jwtDecode(localStorage.getItem('token'));
 
       // Getting redirect url part matching current user role
       // const currentRole = this.auth.userData.role.name.toLowerCase();
