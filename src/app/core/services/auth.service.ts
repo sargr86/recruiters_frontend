@@ -56,18 +56,19 @@ export class AuthService {
    * Checks current user roles
    * @param role passed role
    */
-  checkRoles(role: string) {
-    if (this.loggedIn() && this.userData) {
-      if ('role' in this.userData) {
-        return this.userData.role.name_en.toLowerCase() === role;
-      } else {
+  // checkRoles(role: string) {
+  //   if (this.loggedIn() && this.userData) {
+  //     if ('role' in this.userData) {
+  //       return this.userData.role.name_en.toLowerCase() === role;
+  //     } else {
+  //
+  //       return this.userData.roles.map(r => {
+  //         return (r.name_en.toLowerCase().replace(' ', '_') === role);
+  //       }).some(Boolean);
+  //     }
+  //   }
+  //   return false;
+  // }
 
-        return this.userData.roles.map(r => {
-          return (r.name_en.toLowerCase().replace(' ', '_') === role);
-        }).some(Boolean);
-      }
-    }
-    return false;
-  }
 
 }

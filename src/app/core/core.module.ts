@@ -1,39 +1,33 @@
-import {NgModule} from '@angular/core';
+import {NgModule, Optional, SkipSelf} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {MaterialModule} from '@core/modules/material.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {JwtHelperService} from '@auth0/angular-jwt';
-import {JwtModule} from '@auth0/angular-jwt';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {ToastrModule} from 'ngx-toastr';
+import {RequestInterceptor} from '@shared/helpers/http.interceptor';
 
-// Token getter for JWT module
-export function tokenGetter() {
-  return localStorage.getItem('token');
-}
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    MaterialModule,
-    ReactiveFormsModule,
-    FormsModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter,
-        whitelistedDomains: ['localhost:3000'],
-        blacklistedRoutes: ['localhost:3000/auth/']
-      }
-    })
+    HttpClientModule,
+    ToastrModule.forRoot()
   ],
   providers: [
-    JwtHelperService
-  ],
-  exports: [
-    MaterialModule,
-    ReactiveFormsModule,
-    FormsModule,
-
+    JwtHelperService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestInterceptor,
+      multi: true
+    },
   ]
 })
 export class CoreModule {
+  constructor( @Optional() @SkipSelf() parentModule: CoreModule) {
+    if (parentModule) {
+      throw new Error('CoreModule has already been loaded. You should only import Core modules in the AppModule only.');
+    }
+  }
 }
