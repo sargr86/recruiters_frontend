@@ -31,7 +31,6 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required],
     });
 
-    this.toastr.success('Hello world!', 'Toastr fun!');
   }
 
   ngOnInit() {

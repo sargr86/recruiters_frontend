@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatSidenav} from '@angular/material/sidenav';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +11,17 @@ export class AppComponent implements OnInit {
   title = 'frontend';
   @ViewChild('sidenav', {static: true}) sidenav: MatSidenav;
 
-  constructor() {
+  constructor(
+    public router: Router
+  ) {
 
   }
 
   ngOnInit(): void {
+  }
+
+  get ifDashboardPage(): boolean {
+    return /admin|dashboard/.test(this.router.url);
   }
 
 }

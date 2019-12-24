@@ -1,0 +1,16 @@
+.mat-toolbar {
+  margin-top: -20px;
+
+  .mat-toolbar-row{
+    justify-content: space-between;
+  }
+
+  .profile-image{
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+}

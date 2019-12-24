@@ -5,10 +5,12 @@ import {DashboardComponent} from '@app/admin/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'dashboard/show',
     component: DashboardComponent
   },
-  {path: 'users', loadChildren: () => import('../users/users.module').then(m => m.UsersModule)}
+
+  {path: 'users', loadChildren: () => import('../users/users.module').then(m => m.UsersModule)},
+  {path: 'territories', loadChildren: () => import('../territories/territories.module').then(m => m.TerritoriesModule)},
 ];
 
 @NgModule({

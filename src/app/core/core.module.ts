@@ -7,10 +7,12 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ToastrModule} from 'ngx-toastr';
 import {RequestInterceptor} from '@core/helpers/http.interceptor';
 import {SidebarComponent} from './components/sidebar/sidebar.component';
+import {NotFoundComponent} from './components/not-found/not-found.component';
+import {NavbarComponent} from './components/navbar/navbar.component';
 
 
 @NgModule({
-  declarations: [SidebarComponent],
+  declarations: [SidebarComponent, NotFoundComponent, NavbarComponent],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -29,7 +31,8 @@ import {SidebarComponent} from './components/sidebar/sidebar.component';
   ],
   exports: [
     MaterialModule,
-    SidebarComponent
+    SidebarComponent,
+    NavbarComponent
   ]
 })
 export class CoreModule {

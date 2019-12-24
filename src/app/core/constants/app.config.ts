@@ -7,8 +7,23 @@ export const DASHBOARD_LINKS = [
   {
     name: 'Dashboard',
     children: [
-      {name: 'Edit'},
       {name: 'Show'},
+    ]
+  },
+  {
+    name: 'Recruiters',
+    children: [
+      {name: 'Invite'},
+      {name: 'Show'},
+      {name: 'Missed Invitations'}
+    ]
+  },
+  {
+    name: 'Counselors',
+    children: [
+      {name: 'Invite'},
+      {name: 'Show'},
+      {name: 'Missed Invitations'}
     ]
   },
   {
@@ -16,6 +31,14 @@ export const DASHBOARD_LINKS = [
     children: [
       {name: 'Add'},
       {name: 'Attach territory'},
+      {name: 'Show'}
+    ]
+  },
+  {
+    name: 'Territories',
+    children: [
+      {name: 'Add'},
+      {name: 'Attach'},
       {name: 'Show'}
     ]
   },

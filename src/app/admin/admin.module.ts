@@ -1,16 +1,19 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { AdminRoutingModule } from './admin-routing.module';
-import { ShowUsersComponent } from './show-users/show-users.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import {AdminRoutingModule} from './admin-routing.module';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {SharedModule} from '@shared/shared.module';
 
 
 @NgModule({
-  declarations: [ShowUsersComponent, DashboardComponent],
+  declarations: [
+    DashboardComponent],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    SharedModule
   ]
 })
-export class AdminModule { }
+export class AdminModule {
+}

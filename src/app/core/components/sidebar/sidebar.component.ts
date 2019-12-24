@@ -80,7 +80,6 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.getSidebarDataSrc();
 
-    console.log(this.dashboardLinks)
     // this.toggle.emit();
     this.mapForm = this.fb.group({
       type: ['']
@@ -114,8 +113,6 @@ export class SidebarComponent implements OnInit, AfterViewInit {
       //
       // });
     }
-
-    console.log(this.dashboardLinks)
 
     this.dataSource.data = this.dashboardLinks;
   }
@@ -155,7 +152,6 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     // Getting redirect url part matching current user role
     const currentRole = this.auth.userData.role.name.toLowerCase();
     const userType = USER_TYPES.find(d => d.role === currentRole);
-
 
     // sidenav.toggle();
     this.sidebarOpened = !this.sidebarOpened;
