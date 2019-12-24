@@ -9,10 +9,11 @@ import {RequestInterceptor} from '@core/helpers/http.interceptor';
 import {SidebarComponent} from './components/sidebar/sidebar.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
-  declarations: [SidebarComponent, NotFoundComponent, NavbarComponent],
+  declarations: [SidebarComponent, NotFoundComponent, NavbarComponent, HomeComponent],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -32,7 +33,8 @@ import {NavbarComponent} from './components/navbar/navbar.component';
   exports: [
     MaterialModule,
     SidebarComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent
   ]
 })
 export class CoreModule {

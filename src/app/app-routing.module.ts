@@ -3,6 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {NotFoundComponent} from '@core/components/not-found/not-found.component';
 import {ProfileComponent} from '@app/users/profile/profile.component';
 import {AuthGuard} from '@core/guards/auth.guard';
+import {HomeComponent} from '@core/components/home/home.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,7 @@ const routes: Routes = [
   },
   {path: 'territories', loadChildren: () => import('./territories/territories.module').then(m => m.TerritoriesModule)},
   {path: 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule)},
-
+  {path: '', component: HomeComponent},
   {path: '**', component: NotFoundComponent}
 ];
 
