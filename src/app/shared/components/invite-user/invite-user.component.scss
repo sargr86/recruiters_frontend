@@ -1,0 +1,11 @@
+.inviteUserForm {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  padding: 40px;
+
+  .actionButtons {
+    display: flex;
+    justify-content: center;
+  }
+}

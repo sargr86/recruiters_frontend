@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AttachTerritoryComponent } from './attach-territory.component';
+import { InviteUserComponent } from './invite-user.component';
 
-describe('AttachTerritoryComponent', () => {
-  let component: AttachTerritoryComponent;
-  let fixture: ComponentFixture<AttachTerritoryComponent>;
+describe('InviteUserComponent', () => {
+  let component: InviteUserComponent;
+  let fixture: ComponentFixture<InviteUserComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AttachTerritoryComponent ]
+      declarations: [ InviteUserComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AttachTerritoryComponent);
+    fixture = TestBed.createComponent(InviteUserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

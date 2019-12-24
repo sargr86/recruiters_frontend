@@ -1,0 +1,25 @@
+.form-container {
+  h4 {
+    margin-left: 170px;
+    color: #204c90;
+  }
+
+  .userProfileForm {
+    display: flex;
+    width: 70%;
+    padding: 40px;
+    justify-content: space-evenly;
+
+    .left, .right {
+      display: flex;
+      flex-direction: column;
+      width: 20%;
+    }
+
+
+    .actionButtons {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

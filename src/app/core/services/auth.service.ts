@@ -24,7 +24,6 @@ export class AuthService {
     if (this.loggedIn()) {
       const token = localStorage.getItem('token');
       this.userData = jwtDecode(token);
-      console.log(this.userData)
     }
   }
 
@@ -52,6 +51,13 @@ export class AuthService {
     return this.httpClient.post<User>(`${API_URL}auth/login`, formData);
   }
 
+  /**
+   * Logs out the current user
+   */
+  logout() {
+    localStorage.setItem('token', '');
+    this.router.navigate(['/']).then(m => m);
+  }
 
   /**
    * Checks current user roles

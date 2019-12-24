@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
       // const userType = USER_TYPES.find(d => d.role === currentRole);
 
       // Navigate to the dashboard page
-      this.router.navigate([`/`]); // ${userType ? userType.label : 'admin'}
+      this.router.navigate([`admin/dashboard/show`]); // ${userType ? userType.label : 'admin'}
 
     }));
     // }

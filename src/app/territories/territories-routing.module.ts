@@ -7,15 +7,15 @@ import {SaveTerritoriesComponent} from '@territories/save-territories/save-terri
 
 const routes: Routes = [
   {
-    path: 'show',
+    path: 'show-territories',
     component: ShowTerritoriesComponent
   },
   {
-    path: 'attach',
+    path: 'attach-territories',
     component: AttachTerritoriesComponent
   },
   {
-    path: 'add',
+    path: 'add-territories',
     component: SaveTerritoriesComponent
   }
 ];

@@ -3,18 +3,16 @@ import {CommonModule} from '@angular/common';
 
 import {UsersRoutingModule} from './users-routing.module';
 import {ShowUsersComponent} from './show-users/show-users.component';
-import {AttachTerritoryComponent} from './attach-territory/attach-territory.component';
 import {SharedModule} from '@shared/shared.module';
-import { SaveUsersComponent } from './save-users/save-users.component';
 import {ProfileComponent} from '@app/users/profile/profile.component';
+import { InviteUsersComponent } from './invite-users/invite-users.component';
 
 
 @NgModule({
   declarations: [
     ProfileComponent,
     ShowUsersComponent,
-    AttachTerritoryComponent,
-    SaveUsersComponent
+    InviteUsersComponent,
   ],
   imports: [
     CommonModule,

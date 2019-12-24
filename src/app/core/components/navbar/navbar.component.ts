@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivationEnd, Data, NavigationEnd, NavigationStart, Router} from '@angular/router';
+import {Data, NavigationEnd, NavigationStart, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {filter} from 'rxjs/operators';
+import {AuthService} from '@core/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -15,6 +16,7 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     public router: Router,
+    public auth: AuthService
   ) {
   }
 
@@ -27,8 +29,18 @@ export class NavbarComponent implements OnInit {
         .subscribe((dt: Data) => {
           this.routerUrl = dt.url;
 
-          // Could add more chars url:path?=;other possible
-          this.currentSection = dt.url.split('/')[2];
+          if (this.auth.loggedIn()) {
+
+            const urlLastPart = dt.url.split('/')[3];
+
+            if (urlLastPart) {
+
+              // Could add more chars url:path?=;other possible
+              this.currentSection = urlLastPart
+                .replace(/\b[a-z]/g, m => m.toUpperCase())
+                .replace('-', ' ');
+            }
+          }
 
 
         })

@@ -7,39 +7,37 @@ export const DASHBOARD_LINKS = [
   {
     name: 'Dashboard',
     children: [
-      {name: 'Show'},
+      {name: 'Show dashboard'},
     ]
   },
   {
     name: 'Recruiters',
     children: [
-      {name: 'Invite'},
-      {name: 'Show'},
+      {name: 'Invite recruiter'},
+      {name: 'Show recruiters'},
       {name: 'Missed Invitations'}
     ]
   },
   {
     name: 'Counselors',
     children: [
-      {name: 'Invite'},
-      {name: 'Show'},
+      {name: 'Invite counselor'},
+      {name: 'Show counselors'},
       {name: 'Missed Invitations'}
     ]
   },
   {
     name: 'Users',
     children: [
-      {name: 'Add'},
-      {name: 'Attach territory'},
-      {name: 'Show'}
+      {name: 'Show users'}
     ]
   },
   {
     name: 'Territories',
     children: [
-      {name: 'Add'},
-      {name: 'Attach'},
-      {name: 'Show'}
+      {name: 'Add territories'},
+      {name: 'Attach territories'},
+      {name: 'Show territories'}
     ]
   },
 ];

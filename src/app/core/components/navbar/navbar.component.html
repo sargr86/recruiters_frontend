@@ -9,20 +9,28 @@
 
 
     <div class="right">
-      <div mat-card-avatar class="profile-image" #r="matMenuTrigger" [matMenuTriggerFor]="menu"
-           (click)="r.openMenu()"></div>
-      <mat-menu #menu="matMenu" [overlapTrigger]="false">
 
-        <button mat-menu-item *ngIf="routerUrl!=='/users/profile'" (click)="router.navigate(['users/profile'])">
-          <mat-icon>person</mat-icon>
-          <span>Profile</span>
-        </button>
+      <ng-container *ngIf="auth.loggedIn()">
 
-        <button mat-menu-item>
-          <mat-icon>exit_to_app</mat-icon>
-          <span>Logout</span>
-        </button>
-      </mat-menu>
+        <div mat-card-avatar class="profile-image" #r="matMenuTrigger" [matMenuTriggerFor]="menu"
+             (click)="r.openMenu()"></div>
+        <mat-menu #menu="matMenu" [overlapTrigger]="false">
+
+          <button mat-menu-item *ngIf="routerUrl!=='/users/profile'" (click)="router.navigate(['users/profile'])">
+            <mat-icon>person</mat-icon>
+            <span>Profile</span>
+          </button>
+
+          <button mat-menu-item (click)="auth.logout()">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
+      </ng-container>
+
+      <ng-container *ngIf="!auth.loggedIn()">
+        <span class="loginLink" *ngIf="routerUrl!=='/auth/login'" (click)="router.navigate(['auth/login'])">Log in</span>
+      </ng-container>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>

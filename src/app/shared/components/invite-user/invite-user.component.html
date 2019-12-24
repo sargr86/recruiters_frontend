@@ -1,0 +1,17 @@
+<form [formGroup]="inviteUserForm" class="inviteUserForm">
+  <mat-form-field>
+    <input matInput formControlName="first_name" placeholder="First name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput formControlName="last_name" placeholder="Last name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput formControlName="email" placeholder="Email">
+  </mat-form-field>
+
+  <div class="actionButtons">
+    <button mat-raised-button color="primary" (click)="invite()">Invite</button>
+  </div>
+</form>

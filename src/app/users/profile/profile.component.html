@@ -1,1 +1,54 @@
-<p>profile works!</p>
+<div class="form-container">
+
+  <h4>Your personal information</h4>
+  <form [formGroup]="userProfileForm" class="userProfileForm">
+
+    <div class="left">
+      <mat-form-field>
+        <input matInput formControlName="first_name" placeholder="First name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput formControlName="email" placeholder="Email">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Select county</mat-label>
+        <mat-select [placeholder]="'county'">
+          <!--      <mat-option *ngFor="let food of foods" [value]="food.value">-->
+          <!--        {{food.viewValue}}-->
+          <!--      </mat-option>-->
+        </mat-select>
+      </mat-form-field>
+
+
+      <button mat-raised-button (click)="save()">Cancel</button>
+
+
+    </div>
+
+    <div class="right">
+
+      <mat-form-field>
+        <input matInput formControlName="last_name" placeholder="Last name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Select state</mat-label>
+        <mat-select>
+          <!--      <mat-option *ngFor="let food of foods" [value]="food.value">-->
+          <!--        {{food.viewValue}}-->
+          <!--      </mat-option>-->
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput formControlName="zip_code" placeholder="Zip code">
+      </mat-form-field>
+
+
+      <button mat-raised-button color="primary" (click)="save()">Save changes</button>
+
+    </div>
+  </form>
+</div>
