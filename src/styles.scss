@@ -55,3 +55,13 @@ body {
 .mat-drawer-inner-container {
   overflow: hidden !important;
 }
+
+.resume-upload {
+  margin: auto;
+  width: 86%;
+
+  .dz-message {
+    background-color: transparent !important;
+    border: 1px dotted #aaa !important;
+  }
+}

@@ -1,0 +1,74 @@
+//.form-container {
+//  padding: 20px;
+//
+//  .user-info {
+//    display: flex;
+//    flex-direction: column;
+//    width: 30%;
+//  }
+//}
+
+
+.form-container {
+  h4 {
+    margin-left: 262px;
+    color: #204c90;
+    text-transform: uppercase;
+  }
+
+  .register-form {
+    display: flex;
+    width: 70%;
+    padding: 40px;
+    justify-content: space-evenly;
+
+    .left, .right {
+      display: flex;
+      flex-direction: column;
+      width: 25%;
+    }
+
+
+    .actionButtons {
+      display: flex;
+      justify-content: center;
+    }
+
+    .gender, .employment-assistance {
+      padding: 22px 0;
+
+      mat-label {
+        margin-right: 40px;
+      }
+    }
+
+    .employment-assistance {
+      padding: 14px 0;
+    }
+
+
+  }
+
+  .bottom {
+    width: 47%;
+    margin-left: 240px;
+    text-align: center;
+
+    p {
+      color: #204c90;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .short-experience {
+      display: block;
+      width: 83%;
+      height: 121px;
+      margin: auto;
+      resize: none;
+      border: 1px solid silver;
+      background: transparent;
+    }
+  }
+
+}

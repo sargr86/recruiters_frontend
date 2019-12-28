@@ -7,9 +7,17 @@ import {ProfileComponent} from '@app/users/profile/profile.component';
 const routes: Routes = [
   {
     path: 'show-users',
-    component: ShowUsersComponent
+    component: ShowUsersComponent,
+    data: {
+      title: 'Users list'
+    },
   },
-  {path: 'profile', component: ProfileComponent},
+  {
+    path: 'profile', component: ProfileComponent,
+    data: {
+      title: 'Profile'
+    }
+  },
 ];
 
 @NgModule({

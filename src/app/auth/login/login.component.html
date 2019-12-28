@@ -3,8 +3,8 @@
   <!-- E-mail field-->
   <mat-form-field>
     <input matInput [placeholder]="'E-mail'" formControlName="email">
-    <mat-error [hidden]="!email.hasError('required')">E-mail is <strong>required</strong></mat-error>
-    <mat-error [hidden]="!email.hasError('patternInvalid')">E-mail is <strong>invalid</strong></mat-error>
+    <mat-error *ngIf="email.hasError('required')">E-mail is <strong>required</strong></mat-error>
+    <mat-error *ngIf="email.hasError('patternInvalid')">E-mail is <strong>invalid</strong></mat-error>
   </mat-form-field>
 
   <!-- Password field -->

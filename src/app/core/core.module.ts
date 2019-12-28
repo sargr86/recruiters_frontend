@@ -12,6 +12,8 @@ import {NavbarComponent} from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 
 
+
+
 @NgModule({
   declarations: [SidebarComponent, NotFoundComponent, NavbarComponent, HomeComponent],
   imports: [
@@ -20,7 +22,8 @@ import { HomeComponent } from './components/home/home.component';
     ToastrModule.forRoot(),
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
   providers: [
     JwtHelperService,
@@ -29,6 +32,7 @@ import { HomeComponent } from './components/home/home.component';
       useClass: RequestInterceptor,
       multi: true
     },
+
   ],
   exports: [
     MaterialModule,

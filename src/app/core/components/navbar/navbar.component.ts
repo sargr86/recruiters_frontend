@@ -3,6 +3,7 @@ import {Data, NavigationEnd, NavigationStart, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {filter} from 'rxjs/operators';
 import {AuthService} from '@core/services/auth.service';
+import {SubjectService} from '@core/services/subject.service';
 
 @Component({
   selector: 'app-navbar',
@@ -16,7 +17,8 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     public router: Router,
-    public auth: AuthService
+    public auth: AuthService,
+    private subject: SubjectService
   ) {
   }
 
@@ -31,15 +33,9 @@ export class NavbarComponent implements OnInit {
 
           if (this.auth.loggedIn()) {
 
-            const urlLastPart = dt.url.split('/')[3];
-
-            if (urlLastPart) {
-
-              // Could add more chars url:path?=;other possible
-              this.currentSection = urlLastPart
-                .replace(/\b[a-z]/g, m => m.toUpperCase())
-                .replace('-', ' ');
-            }
+            this.subject.getTitleData().subscribe((d) => {
+              this.currentSection = d;
+            });
           }
 
 

@@ -6,6 +6,9 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CoreModule} from '@core/core.module';
 import {JwtModule} from '@auth0/angular-jwt';
+import { DropzoneModule } from 'ngx-dropzone-wrapper';
+
+
 
 // Token getter for JWT module
 export function tokenGetter() {
@@ -27,7 +30,8 @@ export function tokenGetter() {
         whitelistedDomains: ['localhost:3000'],
         blacklistedRoutes: ['localhost:3000/auth/']
       }
-    })
+    }),
+    DropzoneModule
   ],
   providers: [],
   bootstrap: [AppComponent]

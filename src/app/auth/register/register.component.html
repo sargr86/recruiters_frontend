@@ -1,0 +1,125 @@
+<div class="form-container">
+
+  <h4>Sign up</h4>
+
+  <form [formGroup]="registerForm">
+
+    <div class="register-form">
+      <div class="left">
+        <mat-form-field>
+          <input matInput formControlName="first_name" placeholder="First name">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput formControlName="email" placeholder="Email">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Select county</mat-label>
+          <mat-select [placeholder]="'county'">
+            <!--      <mat-option *ngFor="let food of foods" [value]="food.value">-->
+            <!--        {{food.viewValue}}-->
+            <!--      </mat-option>-->
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput formControlName="zip_code" placeholder="Zip code">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Military affiliation</mat-label>
+          <mat-select>
+            <!--      <mat-option *ngFor="let food of foods" [value]="food.value">-->
+            <!--        {{food.viewValue}}-->
+            <!--      </mat-option>-->
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Employment status</mat-label>
+          <mat-select>
+            <!--      <mat-option *ngFor="let food of foods" [value]="food.value">-->
+            <!--        {{food.viewValue}}-->
+            <!--      </mat-option>-->
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="password" formControlName="password" placeholder="Password">
+        </mat-form-field>
+
+      </div>
+
+      <div class="right">
+
+        <mat-form-field>
+          <input matInput formControlName="last_name" placeholder="Last name">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput formControlName="phone" placeholder="Phone">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Select state</mat-label>
+          <mat-select>
+            <!--      <mat-option *ngFor="let food of foods" [value]="food.value">-->
+            <!--        {{food.viewValue}}-->
+            <!--      </mat-option>-->
+          </mat-select>
+        </mat-form-field>
+
+
+        <div class="gender">
+          <mat-label>Gender</mat-label>
+          <!-- Gender field -->
+          <mat-radio-group name="gender" formControlName="gender">
+            <mat-radio-button [value]="'male'">Male</mat-radio-button>
+            <mat-radio-button [value]="'female'">Female</mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <mat-form-field>
+          <mat-label>Rank</mat-label>
+          <mat-select>
+            <!--      <mat-option *ngFor="let food of foods" [value]="food.value">-->
+            <!--        {{food.viewValue}}-->
+            <!--      </mat-option>-->
+          </mat-select>
+        </mat-form-field>
+
+        <div class="employment-assistance">
+
+          <mat-label>Would you like employment assistance?</mat-label>
+
+          <!-- Employment assistance field  field -->
+          <mat-radio-group name="gender" formControlName="assistance">
+            <mat-radio-button [value]="'yes'">Yes</mat-radio-button>
+            <mat-radio-button [value]="'no'">No</mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <mat-form-field>
+          <input matInput type="password" formControlName="password" placeholder="Re-type password">
+        </mat-form-field>
+
+
+      </div>
+
+    </div>
+    <div class="bottom">
+
+      <p>In 2-3 sentences please give us summary of your experience</p>
+      <textarea class="short-experience"></textarea>
+
+      <!-- Showing drop zone for non-authenticated user and for a user without a profile image -->
+      <dropzone [config]="dropzoneConfig"  (removedFile)="removeImage()"
+                id="dropzone" class="resume-upload single" #dropzone (thumbnail)="onAddedFile($event)"
+                [message]="'Drag & drop or choose file'">
+      </dropzone>
+
+      <button mat-raised-button color="primary" (click)="register()">Sign up</button>
+    </div>
+  </form>
+</div>
