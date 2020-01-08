@@ -11,35 +11,42 @@ export const DASHBOARD_LINKS = [
     ]
   },
   {
-    name: 'Recruiters',
+    name: 'Companies',
     children: [
-      {name: 'Invite recruiter'},
-      {name: 'Show recruiters'},
-      {name: 'Missed Invitations'}
+      {name: 'Departments'}
     ]
+
   },
-  {
-    name: 'Counselors',
-    children: [
-      {name: 'Invite counselor'},
-      {name: 'Show counselors'},
-      {name: 'Missed Invitations'}
-    ]
-  },
-  {
-    name: 'Users',
-    children: [
-      {name: 'Show users'}
-    ]
-  },
-  {
-    name: 'Territories',
-    children: [
-      {name: 'Add territories'},
-      {name: 'Attach territories'},
-      {name: 'Show territories'}
-    ]
-  },
+  // {
+  //   name: 'Recruiters',
+  //   children: [
+  //     {name: 'Invite recruiter'},
+  //     {name: 'Show recruiters'},
+  //     {name: 'Missed Invitations'}
+  //   ]
+  // },
+  // {
+  //   name: 'Counselors',
+  //   children: [
+  //     {name: 'Invite counselor'},
+  //     {name: 'Show counselors'},
+  //     {name: 'Missed Invitations'}
+  //   ]
+  // },
+  // {
+  //   name: 'Users',
+  //   children: [
+  //     {name: 'Show users'}
+  //   ]
+  // },
+  // {
+  //   name: 'Territories',
+  //   children: [
+  //     {name: 'Add territories'},
+  //     {name: 'Attach territories'},
+  //     {name: 'Show territories'}
+  //   ]
+  // },
 ];
 
 export const MAIN_SECTIONS: Section[] = [
