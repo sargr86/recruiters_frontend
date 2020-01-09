@@ -6,6 +6,7 @@ import {CountiesService} from '@core/services/counties.service';
 import {State} from '@shared/models/State';
 import {County} from '@shared/models/County';
 import {AuthService} from '@core/services/auth.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -41,7 +42,8 @@ export class RegisterComponent implements OnInit {
     public router: Router,
     private statesService: StatesService,
     private countiesService: CountiesService,
-    private authService: AuthService
+    private authService: AuthService,
+    private toastr: ToastrService
   ) {
     this.registerForm = this.fb.group(this.formFields);
 
@@ -57,7 +59,8 @@ export class RegisterComponent implements OnInit {
 
   register() {
     this.authService.register(this.registerForm.value).subscribe(dt => {
-
+      this.router.navigate(['/']);
+      this.toastr.success('The user has been registered successfully');
     });
   }
 

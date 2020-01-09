@@ -5,6 +5,8 @@ import {StatesService} from '@core/services/states.service';
 import {CountiesService} from '@core/services/counties.service';
 import {AuthService} from '@core/services/auth.service';
 import {UsersService} from '@core/services/users.service';
+import {Router} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-profile',
@@ -22,7 +24,9 @@ export class ProfileComponent implements OnInit {
     private statesService: StatesService,
     private countiesService: CountiesService,
     private authService: AuthService,
-    private usersService: UsersService
+    private usersService: UsersService,
+    public router: Router,
+    private toastr: ToastrService
   ) {
     this.userProfileForm = this.fb.group({
       first_name: ['', Validators.required],
@@ -53,7 +57,8 @@ export class ProfileComponent implements OnInit {
 
   save() {
     this.authService.update(this.userProfileForm.value).subscribe(() => {
-
+      this.router.navigate(['/']);
+      this.toastr.success('Profile info has been updated successfully');
     });
   }
 
