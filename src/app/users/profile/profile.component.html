@@ -14,10 +14,10 @@
 
       <mat-form-field>
         <mat-label>Select county</mat-label>
-        <mat-select [placeholder]="'county'">
-          <!--      <mat-option *ngFor="let food of foods" [value]="food.value">-->
-          <!--        {{food.viewValue}}-->
-          <!--      </mat-option>-->
+        <mat-select [placeholder]="'county'" formControlName="county_id">
+          <mat-option *ngFor="let county of counties" [value]="county.id">
+            {{county.name}}
+          </mat-option>
         </mat-select>
       </mat-form-field>
 
@@ -35,10 +35,10 @@
 
       <mat-form-field>
         <mat-label>Select state</mat-label>
-        <mat-select>
-          <!--      <mat-option *ngFor="let food of foods" [value]="food.value">-->
-          <!--        {{food.viewValue}}-->
-          <!--      </mat-option>-->
+        <mat-select formControlName="state_id">
+          <mat-option *ngFor="let state of states" [value]="state.id">
+            {{state.name}}
+          </mat-option>
         </mat-select>
       </mat-form-field>
 

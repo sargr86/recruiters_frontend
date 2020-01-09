@@ -227,13 +227,15 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   expandLinks() {
     if (this.routerUrl) {
       const routerUrl = this.routerUrl.replace('_', ' ');
-      for (let i = 0; i < this.treeControl.dataNodes.length; i++) {
-        const node = this.treeControl.dataNodes[i];
-        const treeItem = node.name.toLowerCase().replace(/\//g, '-');
-        this.treeControl.collapse(node);
-        if (routerUrl.includes(treeItem)) {
-          this.treeControl.expand(node);
-          // this.cdr.detectChanges();
+      if (this.treeControl.dataNodes) {
+        for (let i = 0; i < this.treeControl.dataNodes.length; i++) {
+          const node = this.treeControl.dataNodes[i];
+          const treeItem = node.name.toLowerCase().replace(/\//g, '-');
+          this.treeControl.collapse(node);
+          if (routerUrl.includes(treeItem)) {
+            this.treeControl.expand(node);
+            // this.cdr.detectChanges();
+          }
         }
       }
     }

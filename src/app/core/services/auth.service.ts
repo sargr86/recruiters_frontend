@@ -77,5 +77,8 @@ export class AuthService {
     return false;
   }
 
+  update(params) {
+    return this.httpClient.put<User>(`${API_URL}auth/update-profile`, params);
+  }
 
 }
